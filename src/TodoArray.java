@@ -9,19 +9,15 @@ public class TodoArray {
   String todoFile = "assets/todos.txt";
   Todo[] todos;
 
-
   public static void main(String[] args){
-
     Scanner input = new Scanner(System.in);
     TodoArray todoArray = new TodoArray();
 
     System.out.println("type 'add', 'list', 'empty'");
     todoArray.actions(input.next());
-
   }
 
   public void actions(String input){
-
     switch(input){
       case "add":
         pushMany();
@@ -35,11 +31,9 @@ public class TodoArray {
       default:
         System.out.println("Command Does Not Exist");
     }
-
   }
 
   public void pushMany(){
-
     System.out.println("How many new thing to do?");
     todos = new Todo[input.nextInt()];
 
@@ -61,11 +55,9 @@ public class TodoArray {
     } catch (IOException e) {
       e.printStackTrace();
     }
-
   }
 
   public void popAll(){
-
     try {
       FileWriter file = new FileWriter(todoFile, false);
       file.write("");
@@ -74,11 +66,9 @@ public class TodoArray {
     } catch (IOException e) {
       e.printStackTrace();
     }
-
   }
 
   public void listAll(){
-
     try {
       FileReader file = new FileReader(todoFile);
       int ch;
@@ -86,13 +76,10 @@ public class TodoArray {
         ch = file.read();
         if (ch != -1) System.out.print((char) ch);
       } while (ch != -1);
-
       file.close();
-
     } catch (IOException e) {
       e.printStackTrace();
     }
-
   }
 
 }
