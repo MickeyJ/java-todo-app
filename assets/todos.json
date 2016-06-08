@@ -1,17 +1,13 @@
 [{
-   "id": "0",
-   "task": "cook",
-   "complete": "false"
+  "id": "0",
+  "task": "thing1",
+  "complete": "false"
  }, {
-   "id": "1",
-   "task": "clean",
-   "complete": "false"
+  "id": "1",
+  "task": "thing2",
+  "complete": "false"
  }, {
-   "id": "2",
-   "task": "eat",
-   "complete": "false"
- }, {
-   "id": "3",
-   "task": "sleep",
-   "complete": "false"
+  "id": "2",
+  "task": "thing3",
+  "complete": "false"
  }]

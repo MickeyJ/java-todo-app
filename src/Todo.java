@@ -10,7 +10,8 @@ public class Todo {
     task = "";
     complete = false;
   }
-  public Todo getTodoObj(){
+
+  public Object getTodoObj(){
     return this;
   }
 

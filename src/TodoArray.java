@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.FileWriter;
@@ -44,7 +43,7 @@ public class TodoArray {
       todos[i] = new Todo();
       todos[i].setTodo(i, input.next());
 
-      System.out.println(todos[i].getTodoObj());
+//      System.out.println(todos[i].getTodoObj());
 
       list.add(todos[i].getTodo());
     }
@@ -52,10 +51,11 @@ public class TodoArray {
     System.out.println(list);
 
     try {
-      FileWriter file = new FileWriter(todoFile, true);
+      FileWriter file = new FileWriter(todoFile, false);
       file.write(String.valueOf(list));
       file.flush();
       file.close();
+
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -66,7 +66,7 @@ public class TodoArray {
 
     try {
       FileWriter file = new FileWriter(todoFile, false);
-      file.write("");
+      file.write("[]");
       file.close();
       System.out.println("\nTodo List is Now Empty");
 
@@ -79,6 +79,7 @@ public class TodoArray {
   public void listAll(){
 
     System.out.println();
+
     try {
       FileReader file = new FileReader(todoFile);
       int ch;
@@ -88,6 +89,7 @@ public class TodoArray {
         if (ch != -1) System.out.print((char) ch);
       } while (ch != -1);
       file.close();
+
     } catch (IOException e) {
       e.printStackTrace();
     }
