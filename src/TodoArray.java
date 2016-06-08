@@ -11,11 +11,15 @@ public class TodoArray {
   Todo[] todos;
 
   public static void main(String[] args){
-    Scanner input = new Scanner(System.in);
     TodoArray todoArray = new TodoArray();
+    todoArray.initREPL();
+  }
 
-    System.out.println("Type 'add', 'list', or 'empty'");
-    todoArray.callAction(input.next());
+  public void initREPL(){
+    System.out.print("\nType 'add', 'list', or 'empty'\n\n");
+    callAction(input.next());
+    System.out.print("\n");
+    initREPL();
   }
 
   public void callAction(String input){
@@ -89,6 +93,7 @@ public class TodoArray {
         if (ch != -1) System.out.print((char) ch);
       } while (ch != -1);
       file.close();
+      System.out.println();
 
     } catch (IOException e) {
       e.printStackTrace();
