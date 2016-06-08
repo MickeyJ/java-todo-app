@@ -18,7 +18,6 @@ public class Todo {
   }
 
   public String getTodo(){
-
     return (
       "  {" +
       "\n    id: " + this.id +"," +
@@ -26,7 +25,6 @@ public class Todo {
       "\n    complete: " + this.complete +
       "\n  },"
     );
-
   }
 
 }
