@@ -10,6 +10,9 @@ public class Todo {
     task = "";
     complete = false;
   }
+  public Todo getTodoObj(){
+    return this;
+  }
 
   public void setTodo(int id, String task){
     this.id = id;
@@ -19,11 +22,11 @@ public class Todo {
 
   public String getTodo(){
     return (
-      "  {" +
-      "\n    id: " + this.id +"," +
-      "\n    task: " + this.task +
-      "\n    complete: " + this.complete +
-      "\n  },"
+      "{" +
+      "\n  \"id\": \"" + this.id +"\"," +
+      "\n  \"task\": \"" + this.task +"\"," +
+      "\n  \"complete\": \"" + this.complete +"\"" +
+      "\n }"
     );
   }
 
