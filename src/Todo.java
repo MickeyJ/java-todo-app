@@ -20,10 +20,10 @@ public class Todo {
   public String getTodo(){
     return (
       "  {" +
-        "\n    id: " + this.id +"," +
-        "\n    task: " + this.task +
-        "\n    complete: " + this.complete +
-        "\n  },"
+      "\n    id: " + this.id +"," +
+      "\n    task: " + this.task +
+      "\n    complete: " + this.complete +
+      "\n  },"
     );
   }
 

@@ -14,9 +14,11 @@ public class TodoArray {
 
     System.out.println("Type 'add', 'list', or 'empty'");
     todoArray.callAction(input.next());
+
   }
 
   public void callAction(String input){
+
     switch(input){
       case "add":
         pushMany();
@@ -30,9 +32,11 @@ public class TodoArray {
       default:
         System.out.println("Command Does Not Exist");
     }
+
   }
 
   public void pushMany(){
+
     System.out.println("How many new thing to do?");
     todos = new Todo[input.nextInt()];
 
@@ -54,20 +58,25 @@ public class TodoArray {
     } catch (IOException e) {
       e.printStackTrace();
     }
+
   }
 
   public void popAll(){
+
     try {
       FileWriter file = new FileWriter(todoFile, false);
       file.write("");
       file.close();
       System.out.println("\nTodo List is Now Empty");
+
     } catch (IOException e) {
       e.printStackTrace();
     }
+
   }
 
   public void listAll(){
+
     System.out.println();
     try {
       FileReader file = new FileReader(todoFile);
@@ -80,6 +89,7 @@ public class TodoArray {
     } catch (IOException e) {
       e.printStackTrace();
     }
+
   }
 
 }
