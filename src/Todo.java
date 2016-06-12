@@ -1,6 +1,5 @@
 
 public class Todo {
-
   private int id;
   private String task;
   private boolean complete;
@@ -19,6 +18,7 @@ public class Todo {
     this.id = id;
     this.task = task;
     this.complete = false;
+
   }
 
   public String getTodo(){

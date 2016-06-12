@@ -3,10 +3,6 @@
   "task": "cook",
   "complete": "false"
  }, {
-  "id": "0",
-  "task": "cook",
-  "complete": "false"
- }, {
   "id": "1",
   "task": "clean",
   "complete": "false"
