@@ -9,25 +9,23 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class TodoArray {
-  ArrayList list = new ArrayList();
-  Scanner input = new Scanner(System.in);
-  String todoFile = "assets/todos.json";
-  Todo[] todos;
+  private ArrayList list = new ArrayList();
+  private Scanner input = new Scanner(System.in);
+  private String todoFile = "assets/todos.json";
 
   public static void main(String[] args){
     TodoArray todoArray = new TodoArray();
-
     todoArray.initREPL();
   }
 
-  public void initREPL(){
+  void initREPL(){
     System.out.print("\nType 'add', 'list', 'empty', or 'exit'\n\n");
     callAction(input.next());
     System.out.print("\n");
     initREPL();
   }
 
-  public void callAction(String input){
+  void callAction(String input){
 
     switch(input){
       case "add": pushMany();
@@ -44,9 +42,9 @@ public class TodoArray {
 
   }
 
-  public void pushMany(){
+  void pushMany(){
     System.out.println("\nHow many new things to do?");
-    todos = new Todo[input.nextInt()];
+    Todo[] todos = new Todo[input.nextInt()];
 
     for (int i = 0; i < todos.length; i++){
       System.out.println("\nEnter a task");
@@ -62,12 +60,12 @@ public class TodoArray {
     listTodos();
   }
 
-  public void popAll(){
+  void popAll(){
     writeFile("[]");
     System.out.println("\nTodo List is Now Empty");
   }
 
-  public void listTodos() {
+  void listTodos() {
     String jsonData = readFile(todoFile);
     System.out.println();
 
@@ -86,7 +84,7 @@ public class TodoArray {
 
   }
 
-  public static String readFile(String filename) {
+  static String readFile(String filename) {
     String result = "";
     try {
       BufferedReader file = new BufferedReader(new FileReader(filename));
@@ -103,7 +101,7 @@ public class TodoArray {
     return result;
   }
 
-  public void writeFile(String input){
+  void writeFile(String input){
     try {
       FileWriter writeFile = new FileWriter(todoFile, false);
       writeFile.write(input);
